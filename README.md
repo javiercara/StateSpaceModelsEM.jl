@@ -8,27 +8,27 @@ The following models are included:
 
 - The ACQR model:
 
-x_{t+1} = Ax_{t} + w_{t}
+      x_{t+1} = Ax_{t} + w_{t},   w_{t} -> N(0,Q)
 
-y_{t}   = Cx_{t} + v_{t}
+      y_{t}   = Cx_{t} + v_{t},   v_{t} -> N(0,R)
 
-where w_{t} -> N(0,Q), v_{t} -> N(0,R)
+      x_{1} -> N(m_{1},P_{1})
 
 - The ABCDQR model:
 
-x_{t+1} = Ax_{t} + Bu_{t} + w_{t}
+      x_{t+1} = Ax_{t} + Bu_{t} + w_{t},   w_{t} -> N(0,Q)
 
-y_{t}   = Cx_{t} + Du_{t} + v_{t}
+      y_{t}   = Cx_{t} + Du_{t} + v_{t},   w_{t} -> N(0,Q)
 
-where w_{t} -> N(0,Q), v_{t} -> N(0,R)
+      x_{1} -> N(m_{1},P_{1})
 
 ## Installation
 
 To install the package:
 
-~~~
-julia> using Pkg; Pkg.add(PackageSpec(url="https://github.com/javiercara/EmACQR.jl", rev="master"))
-~~~
+```julia
+julia> using Pkg; Pkg.add(PackageSpec(url="https://github.com/javiercara/StateSpaceModelsEM.jl", rev="master"))
+```
 
 ## Author
 
