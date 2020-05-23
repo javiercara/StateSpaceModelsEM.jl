@@ -16,7 +16,7 @@ The following models are included:
       
       a,c,q,r \in R
 
-- The ACQR model:
+- The **ACQR** model:
 
       x_{t+1} = Ax_{t} + w_{t},   w_{t} -> N(0,Q)
 
@@ -26,7 +26,7 @@ The following models are included:
 
       A \in R^{nx,nx}, C \in R^{ny,nx}, Q \in R^{nx,nx}, R \in R^{ny,ny}
 
-- The ABCDQR model:
+- The **ABCDQR** model:
 
       x_{t+1} = Ax_{t} + Bu_{t} + w_{t},   w_{t} -> N(0,Q)
 
