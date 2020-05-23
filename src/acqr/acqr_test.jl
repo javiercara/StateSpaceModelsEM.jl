@@ -1,0 +1,11 @@
+include("acqr.jl")
+
+include("acqr_simula_test.jl")
+include("acqr_kfilter_test.jl")
+include("acqr_ksmoother_test.jl")
+include("acqr_em_starting_test.jl")
+include("acqr_em_test.jl")
+include("acqr_kfilter_s_test.jl")
+include("acqr_ksmoother_s_test.jl")
+include("acqr_em_s_test.jl")
+include("acqr_kalman_test.jl")

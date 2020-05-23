@@ -25,4 +25,12 @@ export
 	ABCDQR_em, ABCDQR_em_s,
 	ABCDQR_em_starting
 
+include("acqr/acqr.jl")
+export
+	acqr,acqrEM,acqrKal,
+	acqr_kfilter, acqr_kfilter_s,
+	acqr_ksmoother, acqr_ksmoother_s,
+	acqr_em, acqr_em_s,
+	acqr_kalman
+
 end # module
