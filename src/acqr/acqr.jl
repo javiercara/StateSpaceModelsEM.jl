@@ -21,13 +21,15 @@ struct acqrEM
 end
 #
 struct acqrKal
-    em::acqrEM
-    pred
-    predVar
-    fil
-    filVar
-    smooth
-    smoothVar
+    y::Vector{Float64}
+    model::acqr
+    prediction
+    predictionCov
+    filter
+    filterCov
+    smoother
+    smootherCov
+    s::Bool
 end
 
 

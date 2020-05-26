@@ -1,14 +1,14 @@
-function acqr_kalman(m::acqrEM)
+function acqr_kalman(y,m::acqr;s::Bool=true)
 
 	# parameters
-	a = m.fit.a
-	c = m.fit.c
-	q = m.fit.q
-	r = m.fit.r
-	m1 = m.fit.m1
-	P1 = m.fit.P1
+	a = m.a
+	c = m.c
+	q = m.q
+	r = m.r
+	m1 = m.m1
+	P1 = m.P1
 
-    if m.s
+    if s
         # stationary
         (xtt,Ptt,xtt1,Ptt1,et,St,Kt,loglik) = acqr_kfilter_s(y,a,c,q,r,m1)
 		(xtN,PtN,Pt1tN) = acqr_ksmoother_s(a,xtt,Ptt,xtt1,Ptt1)
@@ -17,7 +17,7 @@ function acqr_kalman(m::acqrEM)
 		(xtN,PtN,Pt1tN) = acqr_ksmoother(a,xtt,Ptt,xtt1,Ptt1)
 	end
 
-	salida = acqrKal(m,xtt1,Ptt1,xtt,Ptt,xtN,PtN)
+	salida = acqrKal(y,m,xtt1,Ptt1,xtt,Ptt,xtN,PtN,s)
 
 	return salida
 end

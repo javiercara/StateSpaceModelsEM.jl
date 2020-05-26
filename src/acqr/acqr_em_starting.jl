@@ -10,23 +10,26 @@ function acqr_em_starting(y)
     #
     nt = length(y)
 
-    # least squares for a
-    # ya = a*yb + w
+    # least squares for c
+    # ya = c*yb + v
     ya = y[2:nt]
     yb = y[1:nt-1]
-    a = sum(ya.*yb)/sum(yb.^2)
+    c = sum(ya.*yb)/sum(yb.^2)
+
+    # noise
+    v = ya - c*yb
+    r = var(v)
+
+    #
+    a = 0.5 # must be < 1
 
     # noise
     w = ya - a*yb
     q = var(w)
 
-    #
-    c = 1
-    r = 0.001*q
-
     # first state
-    m1 = y[1]
-    P1 = 0
+    m1 = y[1]/c
+    P1 = 1
 
-    return a,c,q,r,m1,P1
+    return acqr(a,c,q,r,m1,P1)
 end

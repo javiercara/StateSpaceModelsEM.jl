@@ -1,19 +1,20 @@
 nt = 1000
 seed = 99
-m = acqr_simula(nt,seed)
+ssm = acqr(0.8,1.5,2,3,0.5,2)
+m = acqr_simula(ssm,nt,seed)
 y = m["y"]
-a = m["a"]
-c = m["c"]
-q = m["q"]
-r = m["r"]
-x10 = m["m1"]
-P10 = m["P1"]
+a = ssm.a
+c = ssm.c
+q = ssm.q
+r = ssm.r
+x10 = ssm.m1
+P10 = ssm.P1
 
 ###########################
 print("Testing acqr_kalman: ")
 start = acqr(0.5,0.5,1,1,0,0)
 me = acqr_em_s(y,start,max_iter=10)
-mk = acqr_kalman(me)
-if sum(mk.pred.^2) > 1e-6
+mk = acqr_kalman(y,me.fit,s=true)
+if sum(mk.prediction.^2) > 1e-6
     println("OK")
 end

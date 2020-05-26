@@ -1,12 +1,14 @@
 nt = 1000
 seed = 99
-m = acqr_simula(nt,seed)
+ssm = acqr(0.8,1.5,2,3,0.5,2)
+m = acqr_simula(ssm,nt,seed)
 y = m["y"]
-a = m["a"]
-c = m["c"]
-q = m["q"]
-r = m["r"]
-x10 = m["m1"]
+a = ssm.a
+c = ssm.c
+q = ssm.q
+r = ssm.r
+x10 = ssm.m1
+P10 = ssm.P1
 
 ###########################
 print("Testing acqr_kfilter_s: ")
